@@ -57,3 +57,14 @@ setInterval(() => {
         texts[currentIndex].classList.add("opacity-100", "translate-x-0");
     }, 50);
 }, 3000); // ganti teks tiap 3 detik
+
+
+let textsIntro = document.querySelectorAll('.active-text-intro');
+let currentIndexIntro = 0;
+setInterval(() => {
+    // teks keluar ke kiri
+    textsIntro[currentIndexIntro].classList.remove("text-(--white)", "opacity-100");
+    textsIntro[currentIndexIntro].classList.add("text-(--secondary)", "opacity-30");
+    currentIndexIntro = (currentIndexIntro + 1) % textsIntro.length;
+    textsIntro[currentIndexIntro].classList.add("text-(--white)","opacity-100");
+}, 3000); // ganti teks tiap 3 detik
