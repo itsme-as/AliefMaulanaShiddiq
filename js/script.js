@@ -1,0 +1,59 @@
+
+
+toggleNav = () =>{
+    let navigation_hamburger = document.getElementById('navigation');
+    let firstBar = document.getElementById('firstBar');
+    let secondBar = document.getElementById('secondBar');
+
+    navigation_hamburger.classList.toggle("opacity-100");
+    navigation_hamburger.classList.toggle("hidden");
+    firstBar.classList.toggle("rotate-45");
+    firstBar.classList.toggle("translate-y-[8px]");
+    secondBar.classList.toggle("-rotate-45");
+    secondBar.classList.toggle("-translate-y-[4px]");
+}
+
+hoverBar = () =>{
+    let hoverBar = document.getElementById('secondBar');
+    let firstHoverBar = document.getElementById('firstBar');
+
+    hoverBar.classList.remove("w-7");
+    hoverBar.classList.add("w-10");
+    hoverBar.classList.remove("bg-(--white)");
+    hoverBar.classList.add("bg-(--secondary)");
+    firstHoverBar.classList.remove("bg-(--white)");
+    firstHoverBar.classList.add("bg-(--secondary)");
+}
+
+hoverBarOut = () =>{
+    let hoverBar = document.getElementById('secondBar');
+    let firstHoverBar = document.getElementById('firstBar');
+    hoverBar.classList.remove("w-10");
+    hoverBar.classList.add("w-7");
+    hoverBar.classList.remove("bg-(--secondary)");
+    hoverBar.classList.add("bg-(--white)");
+    firstHoverBar.classList.remove("bg-(--secondary)");
+    firstHoverBar.classList.add("bg-(--white)");
+}
+
+let texts = document.querySelectorAll('.active-text');
+let currentIndex = 0;
+
+setInterval(() => {
+    // teks keluar ke kiri
+    texts[currentIndex].classList.remove("opacity-100", "translate-x-0");
+    texts[currentIndex].classList.add("opacity-0", "-translate-x-full");
+
+    // index berikutnya
+    currentIndex = (currentIndex + 1) % texts.length;
+
+    // reset posisi sebelum muncul
+    texts[currentIndex].classList.remove("opacity-100", "translate-x-0", "-translate-x-full");
+    texts[currentIndex].classList.add("opacity-0", "translate-x-full");
+
+    // pakai sedikit delay biar animasi masuk halus
+    setTimeout(() => {
+        texts[currentIndex].classList.remove("opacity-0", "translate-x-full");
+        texts[currentIndex].classList.add("opacity-100", "translate-x-0");
+    }, 50);
+}, 3000); // ganti teks tiap 3 detik
