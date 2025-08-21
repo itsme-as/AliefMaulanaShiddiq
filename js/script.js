@@ -67,4 +67,4 @@ setInterval(() => {
     textsIntro[currentIndexIntro].classList.add("text-(--secondary)", "opacity-30");
     currentIndexIntro = (currentIndexIntro + 1) % textsIntro.length;
     textsIntro[currentIndexIntro].classList.add("text-(--white)","opacity-100");
-}, 3000); // ganti teks tiap 3 detik
+}, 1000); // ganti teks tiap 3 detik

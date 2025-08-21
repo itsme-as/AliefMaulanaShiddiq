@@ -57,7 +57,7 @@
 
     <main>
         <section id="homePage" class="min-h-screen bg-linear-to-l from-(--background) to-slate-700 w-full flex flex-col sm:flex-row justify-center items-center"> 
-            <div class="w-full sm:w-1/2 min-h-125 sm:min-h-screen justify-center flex flex-col px-5 sm:px-25">
+            <div class="w-full md:w-1/2 min-h-125 sm:min-h-screen justify-center flex flex-col px-5 sm:px-25">
                 <div class="flex">
                     <h1 class="flex block text-4xl sm:text-6xl font-extrabold text-(--primary) mb-5 h-[1.2em] overflow-hidden">
                         <p class="active-text opacity-100 translate-x-0 transition-all duration-700">HELLO!</p>
@@ -71,26 +71,28 @@
                         <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">안녕하세요！</p>
                     </h1>
                 </div>
-                <p class="text-lg sm:text-xl text-(--secondary)">
-                    <span class="active-text-intro text-(--white)">Web Developer</span> | 
-                    <span class="active-text-intro opacity-30">Math & Physics Enthusiast</span> | 
-                    <span class="active-text-intro opacity-30">Material Science</span> | 
-                    <span class="active-text-intro opacity-30">People Management</span></p>
+                <p class="text-lg md:text-xl text-(--secondary)">
+                    <span class="active-text-intro transition-all duration-300 ease-in-out text-(--white)">Web Developer</span> | 
+                    <span class="active-text-intro transition-all duration-300 ease-in-out opacity-30">Math & Physics Enthusiast</span> | 
+                    <span class="active-text-intro transition-all duration-300 ease-in-out opacity-30">Material Science</span> | 
+                    <span class="active-text-intro transition-all duration-300 ease-in-out opacity-30">People Management</span></p>
 
             </div>
-            <div class="w-full sm:w-1/2 min-h-125 sm:min-h-screen  sm:justify-center -mt-60 sm:mt-10 flex justify-center items-center">
-                <!-- <spline-viewer class="sm:w-full" url="https://prod.spline.design/E4oz8UZ5he7ISHkn/scene.splinecode"></spline-viewer> -->
+            <div class="w-full md:w-1/2 min-h-125 sm:min-h-screen  sm:justify-center -mt-60 sm:mt-10 flex justify-center items-center">
+                <spline-viewer class="sm:w-full" url="https://prod.spline.design/E4oz8UZ5he7ISHkn/scene.splinecode"></spline-viewer>
             </div>
         </section>
-        <section id="projectPage" class="pt-5 min-h-screen bg-linear-to-r from-(--primary) to-(--secondary)">
+        <section id="projectPage" class="pt-5 md:py-16 min-h-screen bg-linear-to-r from-(--primary) to-(--secondary)">
             <div class=""><h1 class="rounded-full text-4xl bg-(--background) hover:bg-(--white) hover:text-(--background) hover:border-1 hover:border-(--background) w-fit justify-self-center py-5 px-10 justify-center items-center font-extrabold text-center transition-all duration-700 ease-in-out ">Projects</h1>
             </div>
-            <section>
-                <div class=" py-16 px-16 w-full flex flex-col gap-16 h-auto flex justify-center items-center">
+            <section class="flex flex-col md:flex-row pb-32">
+                <div class=" py-16 px-16 w-full md:w-1/2 flex flex-col gap-16 h-auto flex justify-center items-center">
+                    <!-- Aes GoA -->
                     <div class="flex flex-col items-center ">
-                        <h1 class="text-(--background) text-lg font-bold">Aes | GalleryOfArt</h1>
-                        <img alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-64 h-36">
-                        <p class="px-6 text-justify text-(--background)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint voluptate at aliquid asperiores dolores placeat quibusdam iure officia?</p>
+                        <h1 class="py-2 text-(--background) text-2xl md:text-4xl font-bold">Aes | GalleryOfArt</h1>
+                        <a href="https://itsme-as.github.io/PBI-Project/"><img alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-96 h-54 md:w-128 md:h-72">
+                        </a>
+                        <p class="px-6 text-justify text-(--background) md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint voluptate at aliquid asperiores dolores placeat quibusdam iure officia?</p>
                         <div class="items-center justify-center flex flex-row mt-3 gap-2 text-(--background)">
                             <div class="flex flex-row justify-center items-center inline-block w-30 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
                                 <svg class="inline-block w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M0 32L34.9 427.8 191.5 480 349.1 427.8 384 32 0 32zM308.2 159.9l-183.8 0 4.1 49.4 175.6 0-13.6 148.4-97.9 27 0 .3-1.1 0-98.7-27.3-6-75.8 47.7 0 3.5 38.1 53.5 14.5 53.7-14.5 6-62.2-166.9 0-12.8-145.6 241.1 0-4.4 47.7z"/></svg>
@@ -105,32 +107,43 @@
                                 <p class="inline-block">JS</p>
                             </div>
                         </div>
+                        <a href="https://itsme-as.github.io/PBI-Project/"><div class="py-2 bg-(--background) px-10 mt-5 rounded-full border-3 border-(--background) hover:text-(--background) hover:bg-(--white) transition-all duration-500 ease-in-out"><h2>Click here for live view</h2></div></a>
                     </div>
-                    <div class="flex flex-col items-center ">
-                        <h1 class="text-(--background) text-lg font-bold">Aes | GalleryOfArt</h1>
-                        <img alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-64 h-36">
-                        <p class="px-6 text-justify text-(--background)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint voluptate at aliquid asperiores dolores placeat quibusdam iure officia?</p>
-                        <div class="items-center justify-center flex flex-row mt-3 gap-2 text-(--background)">
-                            <div class="flex flex-row justify-center items-center inline-block w-30 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
-                                <svg class="inline-block w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M0 32L34.9 427.8 191.5 480 349.1 427.8 384 32 0 32zM308.2 159.9l-183.8 0 4.1 49.4 175.6 0-13.6 148.4-97.9 27 0 .3-1.1 0-98.7-27.3-6-75.8 47.7 0 3.5 38.1 53.5 14.5 53.7-14.5 6-62.2-166.9 0-12.8-145.6 241.1 0-4.4 47.7z"/></svg>
-                                <p class="inline-block">HTML5</p>
-                            </div>
-                            <div class="flex flex-row justify-center items-center inline-block w-25 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
-                                <svg class="inline-block w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 32L34.9 427.8 192 480 349.1 427.8 384 32 0 32zm313.1 80l-4.8 47.3-115.3 49.3-.3 .1 111.5 0-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9 48.9 0 3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5 0-.1-.2 .1-3.6-46.3 112.1-46.7 6.5-2.7-122.9 0-5.8-47.3 242.2 0z"/></svg>
-                                <p class="inline-block">CSS5</p>
-                            </div>
-                            <div class="flex flex-row justify-center items-center inline-block w-20 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
-                                <svg class="inline-block w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 32l0 448 448 0 0-448-448 0zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5l0-143.1 42.1 0 0 143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>
-                                <p class="inline-block">JS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div></div>
                 </div>
-                <div>
-
+                <div class=" py-16 px-16 w-full md:w-1/2 flex flex-col gap-16 h-auto flex justify-center items-center">
+                    <!-- AesElearn -->
+                    <div class="flex flex-col items-center ">
+                        <h1 class="py-2 text-(--background) text-2xl md:text-4xl font-bold">AesE-learn</h1>
+                        <a href="https://itsme-as.github.io/AesE-learn"><img alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-96 h-54 md:w-128 md:h-72">
+                        </a>
+                        <p class="px-6 text-justify text-(--background) md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint voluptate at aliquid asperiores dolores placeat quibusdam iure officia?</p>
+                        <div class="items-center justify-center flex flex-row mt-3 gap-2 text-(--background)">
+                            <div class="flex flex-row justify-center items-center inline-block w-30 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
+                                <svg class="inline-block w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M0 32L34.9 427.8 191.5 480 349.1 427.8 384 32 0 32zM308.2 159.9l-183.8 0 4.1 49.4 175.6 0-13.6 148.4-97.9 27 0 .3-1.1 0-98.7-27.3-6-75.8 47.7 0 3.5 38.1 53.5 14.5 53.7-14.5 6-62.2-166.9 0-12.8-145.6 241.1 0-4.4 47.7z"/></svg>
+                                <p class="inline-block">HTML5</p>
+                            </div>
+                            <div class="flex flex-row justify-center items-center inline-block w-45 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
+                                <svg class="inline-block w-5" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z"></path></g></svg>
+                                <p class="inline-block">TailwindCSS</p>
+                            </div>
+                            <div class="flex flex-row justify-center items-center inline-block w-20 px-2 py-1 bg-(--white) rounded-full shadow-lg hover:bg-slate-200 hover:border-1 hover:border-(--background) transition-all duration-300 ease-in cursor-pointer">
+                                <svg class="inline-block w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 32l0 448 448 0 0-448-448 0zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5l0-143.1 42.1 0 0 143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>
+                                <p class="inline-block">JS</p>
+                            </div>
+                        </div>
+                        <a href="https://itsme-as.github.io/AesE-learn"><div class="py-2 bg-(--background) px-10 mt-5 rounded-full border-3 border-(--background) hover:text-(--background) hover:bg-(--white) transition-all duration-500 ease-in-out"><h2>Click here for live view</h2></div></a>                        
+                    </div>
                 </div>
             </section>
+        </section>
+        <section id="toolsPage" class="min-h-screen bg-linear-to-l from-(--background) to-(--secondary)">
+            <div class="flex -translate-x-10 text-right pt-5 md:py-12">
+                <h1 class="rounded-full text-4xl bg-(--background) hover:bg-(--white) hover:text-(--background) hover:border-1 hover:border-(--background) justify-self-center py-5 px-24 justify-center items-center font-extrabold transition-all duration-700 ease-in-out ">Tools</h1>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+                <!-- Add your tools here -->
+            </div>
+
         </section>
     </main>
 
