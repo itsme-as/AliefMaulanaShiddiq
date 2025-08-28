@@ -22,53 +22,61 @@
     </style>
 </head>
 <body onclick="closeNav()" class="text-white font-[Revalia] antialiased z-0">
-    <header class="flex justify-between w-full items-center float-right" >
-        <div class="fixed flex flex-col z-2 top-0 right-0 p-5">
-            <div class="w-10 h-10 mb-5 rounded-full bg-(--secondary) shadow-lg items-center flex justify-center transition-all ease-in-out duration-300">
-                <h1 class="font-[nabla] hover:bg-(--secondary) hover:rounded-full hover:w-25 hover:fixed hover:-translate-x-5 text-[36px] font-extrabold text-center text-(--primary) 
-                hover:-rotate-15 transition-all duration-300 cursor-pointer">
-                    Aes
-                </h1>
+    <header class="flex justify-between w-full items-center" >
+        <div class="fixed flex flex-col z-20 p-5 md:p-5">
+            <div class="fixed flex flex-col mt-5 mr-5 top-0 right-0">
+                <div class="w-10 h-10 mb-5 rounded-full bg-(--secondary) shadow-lg items-center flex justify-center transition-all ease-in-out duration-300">
+                    <h1 class="font-[nabla] hover:bg-(--secondary) hover:rounded-full hover:w-25 hover:fixed hover:-translate-x-5 text-[36px] font-extrabold text-center text-(--primary) 
+                        hover:-rotate-15 transition-all duration-300 cursor-pointer">
+                        Aes
+                    </h1>
+                </div>
+                <div onclick="toggleNav()" class="flex z-15">
+                    <a onmouseenter="hoverBar()" onmouseleave="hoverBarOut()" class="z-15 w-full h-full min-h-5 gap-1 hover:gap-1.5 transition-all duration-300 flex flex-col cursor-pointer">
+                        <span id="firstBar" class="w-10 rounded-xl h-1 bg-(--white) transition-all duration-500 "></span>
+                        <span id="secondBar" class="w-7 rounded-lg h-1 bg-(--white) transition-all duration-500 "></span>
+                    </a>
+                </div>
             </div>
-            <div onclick="toggleNav()" class="flex">
-                <a onmouseenter="hoverBar()" onmouseleave="hoverBarOut()" class="w-full h-full min-h-5 gap-1 hover:gap-1.5 transition-all duration-300 flex flex-col cursor-pointer">
-                    <span id="firstBar" class="w-10 rounded-xl h-1 bg-(--white) transition-all duration-500 "></span>
-                    <span id="secondBar" class="w-7 rounded-lg h-1 bg-(--white) transition-all duration-500 "></span>
-                </a>
-            </div>
-            <div class="w-full h-ful flex flex-col top-10 items-center justify-center mt-100 sm:mt-120">
-                <div class="z-0 w-1 h-30 bg-(--white) rounded-lg flex justify-center shadow-xl"><span class="z-1 w-1.5 h-2 bg-(--secondary) rounded-full"></span></div>
+            <div class="fixed bottom-0 right-0 h-fit p-5 md:m-10">
+                <div class="z-10 w-full h-full items-center justify-center flex flex-col mt-100 md:mt-120">
+                    <div id="scrollBarContainer" class="z-0 w-1 h-30 bg-(--white) rounded-lg flex justify-center shadow-xl">
+                        <span id="scrollBarThumb" class="z-1 w-1.5 h-2 bg-(--secondary) rounded-full"></span>
+                    </div>
+                </div>
             </div>
         </div>
-        <nav id="navigation" class="hidden fixed top-0 right-0 h-screen md:w-1/4 z-1 text-sm bg-slate-900 border-l-4 border-(--secondary) w-3/4 h-full flex flex-col sm:text-lg transition-all ease-in duration-400">
+        <nav id="navigation" class="hidden fixed top-0 right-0 h-screen md:w-1/4 z-10 text-sm bg-slate-900 border-l-4 border-(--secondary) w-3/4 h-full flex flex-col md:text-lg transition-all ease-in duration-400">
             <ul class="w-full h-full flex flex-col justify-center items-center gap-5 ease-in duration-500">
                 <p class="font-extrabold text-(--primary) hover:text-(--secondary) transition-all duration-500 underline text-lg mb-3">Contents</p>
                 <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#homePage">Home</a></li>
                 <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#projectPage">Projects</a></li>
-                <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#">Tools</a></li>
-                <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#">About & Contact</a></li>
+                <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#toolsPage">Tools</a></li>
+                <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#selfPortofolioPage">Self-portofolio</a></li>
+                <li><a class="bg-slate-800 rounded-sm px-3 py-1 hover:bg-slate-600 hover:ease-in-out duration-300 hover:text-(--primary) " href="#about-contactPage">About & Contact</a></li>
             </ul>
             <div class="w-full h-1/10 mb-5 px-10 gap-5 float-left flex flex-row items-center">
-                <a href="#" class="w-[40px] h-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></a>
-                <a href="#" class="w-[40px] h-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg></a>
+                <a href="https://gihub.com/itsme-as" class="w-[40px] h-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></a>
+                <a href="https://linkedin.com/in/aliefshiddiq1" class="w-[40px] h-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg></a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="homePage" class="min-h-screen bg-linear-to-l from-(--background) to-slate-700 w-full flex flex-col sm:flex-row justify-center items-center"> 
-            <div class="w-full md:w-1/2 min-h-125 sm:min-h-screen justify-center flex flex-col px-5 sm:px-25">
+        <section id="homePage" class="min-h-screen bg-linear-to-l from-(--background) to-slate-700 w-full flex flex-col md:flex-row justify-center "> 
+            <img src="assets/pattern-1.png" alt="Background Pattern" class="absolute top-0 left-0 w-[300px] md:w-[400px] object-cover overflow opacity-30 md:opacity-50 z-1 self-start">
+            <div class="relative w-full md:w-1/2 min-h-125 md:min-h-screen justify-center flex flex-col px-5 md:px-25 z-2">
                 <div class="flex">
-                    <h1 class="flex block text-4xl sm:text-6xl font-extrabold text-(--primary) mb-5 h-[1.2em] overflow-hidden">
+                    <h1 class="flex block text-4xl md:text-6xl font-extrabold text-(--primary) mb-5 h-[1.2em]">
                         <p class="active-text opacity-100 translate-x-0 transition-all duration-700">HELLO!</p>
-                        <p class="active-text opacity-0 -translate-x-full absolute transition-all duration-700">HALO!</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">こんにちは！</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">BONJOUR!</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">！مرحبا</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">HOLA!</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">你好！</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">CIAO!</p>
-                        <p class="active-text opacity-0 translate-x-full absolute transition-all duration-700">안녕하세요！</p>
+                        <p class="active-text opacity-0 -translate-x-5 absolute transition-all duration-700">HALO!</p>
+                        <p class="active-text opacity-0 translate-x-5 absolute transition-all duration-700">こんにちは！</p>
+                        <p class="active-text opacity-0 -translate-x-5 absolute transition-all duration-700">BONJOUR!</p>
+                        <p class="active-text opacity-0 translate-x-5 absolute transition-all duration-700">！مرحبا</p>
+                        <p class="active-text opacity-0 -translate-x-5 absolute transition-all duration-700">HOLA!</p>
+                        <p class="active-text opacity-0 translate-x-5 absolute transition-all duration-700">你好！</p>
+                        <p class="active-text opacity-0 -translate-x-5 absolute transition-all duration-700">CIAO!</p>
+                        <p class="active-text opacity-0 translate-x-5 absolute transition-all duration-700">안녕하세요！</p>
                     </h1>
                 </div>
                 <p class="text-lg md:text-xl text-(--secondary)">
@@ -78,10 +86,14 @@
                     <span class="active-text-intro transition-all duration-300 ease-in-out opacity-30">People Management</span></p>
 
             </div>
-            <div class="w-full md:w-1/2 min-h-125 sm:min-h-screen  sm:justify-center -mt-60 sm:mt-10 flex justify-center items-center">
-                <spline-viewer class="sm:w-full" url="https://prod.spline.design/E4oz8UZ5he7ISHkn/scene.splinecode"></spline-viewer>
+            <div class="w-full md:w-1/2 min-h-125 md:min-h-screen  md:justify-center -mt-60 md:mt-10 flex justify-center items-center">
+                <!-- <spline-viewer class="md:w-full" url="https://prod.spline.design/E4oz8UZ5he7ISHkn/scene.splinecode"></spline-viewer> -->
             </div>
+            <img src="assets/pattern-2.png" alt="Background Pattern" class="absolute bottom-0 right-0 mx-0 px-0 w-[250px] md:w-[300px] object-cover opacity-75 z-1 self-end">
         </section>
+
+
+        <!-- Project -->
         <section id="projectPage" class="pt-5 md:py-16 min-h-screen bg-linear-to-r from-(--primary) to-(--secondary)">
             <div class=""><h1 class="rounded-full text-4xl bg-(--background) hover:bg-(--white) hover:text-(--background) hover:border-1 hover:border-(--background) w-fit justify-self-center py-5 px-10 justify-center items-center font-extrabold text-center transition-all duration-700 ease-in-out ">Projects</h1>
             </div>
@@ -90,7 +102,8 @@
                     <!-- Aes GoA -->
                     <div class="flex flex-col items-center ">
                         <h1 class="py-2 text-(--background) text-2xl md:text-4xl font-bold">Aes | GalleryOfArt</h1>
-                        <a href="https://itsme-as.github.io/PBI-Project/"><img alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-96 h-54 md:w-128 md:h-72">
+                        <a target="_blank" href="https://itsme-as.github.io/PBI-Project/">
+                            <img src="assets/aes-goa.png" alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-96 h-fit md:w-128 hover:opacity-30 transition-all duration-300 ease-in-out">
                         </a>
                         <p class="px-6 text-justify text-(--background) md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint voluptate at aliquid asperiores dolores placeat quibusdam iure officia?</p>
                         <div class="items-center justify-center flex flex-row mt-3 gap-2 text-(--background)">
@@ -107,14 +120,15 @@
                                 <p class="inline-block">JS</p>
                             </div>
                         </div>
-                        <a href="https://itsme-as.github.io/PBI-Project/"><div class="py-2 bg-(--background) px-10 mt-5 rounded-full border-3 border-(--background) hover:text-(--background) hover:bg-(--white) transition-all duration-500 ease-in-out"><h2>Click here for live view</h2></div></a>
+                        <a target="_blank" href="https://itsme-as.github.io/PBI-Project/"><div class="py-2 bg-(--background) px-10 mt-5 rounded-full border-3 border-(--background) hover:text-(--background) hover:bg-(--white) transition-all duration-500 ease-in-out"><h2>Click here for live view</h2></div></a>
                     </div>
                 </div>
                 <div class=" py-16 px-16 w-full md:w-1/2 flex flex-col gap-16 h-auto flex justify-center items-center">
                     <!-- AesElearn -->
                     <div class="flex flex-col items-center ">
                         <h1 class="py-2 text-(--background) text-2xl md:text-4xl font-bold">AesE-learn</h1>
-                        <a href="https://itsme-as.github.io/AesE-learn"><img alt="Aes | GoA's Website" class="bg-(--white) rounded-lg shadow-lg w-96 h-54 md:w-128 md:h-72">
+                        <a target="_blank" href="https://itsme-as.github.io/AesE-learn">
+                            <img src="assets/aes-e-learn.png" alt="AesE-Learn's Website" class="bg-(--white) rounded-lg shadow-lg w-96 h-fit md:w-128 hover:opacity-30 transition-all duration-300 ease-in-out">
                         </a>
                         <p class="px-6 text-justify text-(--background) md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint voluptate at aliquid asperiores dolores placeat quibusdam iure officia?</p>
                         <div class="items-center justify-center flex flex-row mt-3 gap-2 text-(--background)">
@@ -131,26 +145,163 @@
                                 <p class="inline-block">JS</p>
                             </div>
                         </div>
-                        <a href="https://itsme-as.github.io/AesE-learn"><div class="py-2 bg-(--background) px-10 mt-5 rounded-full border-3 border-(--background) hover:text-(--background) hover:bg-(--white) transition-all duration-500 ease-in-out"><h2>Click here for live view</h2></div></a>                        
+                        <a target="_blank" href="https://itsme-as.github.io/AesE-learn"><div class="py-2 bg-(--background) px-10 mt-5 rounded-full border-3 border-(--background) hover:text-(--background) hover:bg-(--white) transition-all duration-500 ease-in-out"><h2>Click here for live view</h2></div></a>                        
                     </div>
                 </div>
             </section>
         </section>
+
+
+        <!-- Tools -->
         <section id="toolsPage" class="min-h-screen bg-linear-to-l from-(--background) to-(--secondary)">
-            <div class="flex -translate-x-10 text-right pt-5 md:py-12">
+            <div class="flex -translate-x-10 text-right pt-5 mb-3 md:py-12">
                 <h1 class="rounded-full text-4xl bg-(--background) hover:bg-(--white) hover:text-(--background) hover:border-1 hover:border-(--background) justify-self-center py-5 px-24 justify-center items-center font-extrabold transition-all duration-700 ease-in-out ">Tools</h1>
             </div>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-10">
-                <!-- Add your tools here -->
+            <div class="flex flex-col justify-center items-center gap-3 md:gap-20">
+                <div class="flex flex-col md:flex-row gap-3 md:gap-40">
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg class="w-full " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/></svg>
+                        <p>HTML5</p>
+                    </div>
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg class="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M472.3 96L96 96L96 472.3C96 491.3 103.6 509.5 117 523C130.4 536.5 148.7 544 167.7 544L472.3 544C491.3 544 509.5 536.4 523 523C536.5 509.6 544 491.3 544 472.3L544 167.7C544 148.7 536.4 130.5 523 117C509.6 103.5 491.3 96 472.3 96zM428.4 495.4C420.7 486.9 416.7 474.7 416.4 458.8L447.7 458.8C447.9 472.9 452.8 479.9 462.5 479.9C467.4 479.9 470.9 478.3 473 475.2C475 472.1 476 467.2 476 460.4C476 455 474.7 450.5 472 447C468.5 442.8 463.9 439.5 458.8 437.5L447.2 432C436.9 427.1 429.4 421.2 424.7 414.4C420.2 407.6 418 398.1 418 386C418 372.4 422 361.4 429.8 352.9C437.9 344.4 448.9 340.2 463 340.2C476.6 340.2 487.1 344.4 494.5 352.7C502 361.1 506 373 506.3 388.6L476.2 388.6C476.4 383.5 475.3 378.4 473.2 373.8C471.5 370.4 468.2 368.7 463.2 368.7C454.4 368.7 450 373.9 450 384.4C450 389.7 451.1 393.8 453.2 397C456.3 400.5 460.2 403.2 464.6 404.8L475.7 409.7C487.2 415 495.4 421.4 500.5 429.1C505.6 436.8 508.1 447.1 508.1 460.1C508.1 475.6 504.1 487.5 495.8 495.8C487.6 504.1 476.3 508.3 461.7 508.3C447.1 508.3 436.1 504.1 428.3 495.6zM327.4 495.4C319.7 486.9 315.7 474.7 315.4 458.8L346.7 458.8C346.9 472.9 351.8 479.9 361.5 479.9C366.4 479.9 369.9 478.3 371.9 475.2C373.9 472.1 374.9 467.2 374.9 460.4C374.9 455 373.6 450.5 371 447C367.5 442.8 362.9 439.5 357.8 437.5L346.2 432C335.9 427.1 328.4 421.2 323.7 414.4C319.2 407.6 317 398.1 317 386C317 372.4 321 361.4 328.8 352.9C336.9 344.4 347.9 340.2 362 340.2C375.6 340.2 386.1 344.4 393.4 352.7C401 361.1 404.9 373 405.3 388.6L375.2 388.6C375.4 383.5 374.3 378.4 372.2 373.8C370.5 370.4 367.2 368.7 362.2 368.7C353.4 368.7 349 373.9 349 384.4C349 389.7 350.1 393.8 352.2 397C355.3 400.5 359.2 403.2 363.6 404.8L374.7 409.7C386.2 415 394.4 421.4 399.5 429.1C404.6 436.8 407.1 447.1 407.1 460.1C407.1 475.6 403 487.5 394.8 495.8C386.6 504.1 375.3 508.3 360.7 508.3C346.1 508.3 335.1 504.1 327.3 495.6zM221.8 496.5C213.4 488.8 209.3 477.3 209.3 462L209.3 386.6C209.3 371.4 213.7 359.9 222.5 352C231.4 344.2 243.2 340.2 257.7 340.2C271.8 340.2 282.9 344.2 291.1 352.2C299.4 360.2 303.6 372.2 303.6 388.1L303.6 394.1L270.5 394.1L270.5 388.3C270.5 382.2 269.2 377.6 266.5 374.7C265.4 373.2 263.9 372 262.2 371.2C260.5 370.4 258.7 370 256.8 370.1C251.4 370.1 247.6 371.9 245.4 375.7C243.1 380.9 242.1 386.5 242.4 392.1L242.4 457.6C242.4 471.3 247.2 478.2 256.8 478.4C261.3 478.4 264.7 476.8 267 473.6C269.5 469.5 270.7 464.8 270.5 460L270.5 455.1L303.6 455.1L303.6 460.2C303.6 470.8 301.5 479.7 297.4 486.8C293.4 493.7 287.5 499.3 280.3 502.8C272.6 506.5 264.2 508.3 255.7 508.1C241.5 508.1 230.2 504.2 221.9 496.5z"/></svg>
+                        <p>VanillaCSS</p>
+                    </div>
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg class="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M96 96L96 544L544 544L544 96L96 96zM339.8 445.4C339.8 489 314.2 508.9 276.9 508.9C243.2 508.9 223.7 491.5 213.7 470.4L248 449.7C254.6 461.4 260.6 471.3 275.1 471.3C288.9 471.3 297.7 465.9 297.7 444.8L297.7 301.7L339.8 301.7L339.8 445.4zM439.4 508.9C400.3 508.9 375 490.3 362.7 465.9L397 446.1C406 460.8 417.8 471.7 438.5 471.7C455.9 471.7 467.1 463 467.1 450.9C467.1 436.5 455.7 431.4 436.4 422.9L425.9 418.4C395.5 405.5 375.4 389.2 375.4 354.9C375.4 323.3 399.5 299.3 437 299.3C463.8 299.3 483 308.6 496.8 333L464 354C456.8 341.1 449 336 436.9 336C424.6 336 416.8 343.8 416.8 354C416.8 366.6 424.6 371.7 442.7 379.6L453.2 384.1C489 399.4 509.1 415.1 509.1 450.3C509.1 488.1 479.3 508.9 439.4 508.9z"/></svg>                        
+                        <p>VanillaJS</p>
+                    </div>
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg  fill="#FFF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z"></path></g></svg>
+                        <p>TailwindCSS</p>
+                    </div>    
+                </div>
+                <div class="flex flex-col md:flex-row gap-3 md:gap-40">
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M568.6 179.8C568.5 179.6 568.4 179.3 568.3 179.1C568.2 178.7 568 178.3 567.8 177.9C567.6 177.7 567.5 177.4 567.3 177.2C567.1 176.9 566.8 176.6 566.6 176.3C566.4 176.1 566.1 175.9 565.8 175.7C565.5 175.5 565.2 175.2 564.9 175L468.6 119.5C467.4 118.8 466 118.4 464.6 118.4C463.2 118.4 461.8 118.8 460.6 119.5L364.3 175C364 175.2 363.7 175.4 363.4 175.7C363.1 175.9 362.9 176.1 362.6 176.3C362.3 176.6 362.1 176.9 361.9 177.2C361.7 177.4 361.5 177.6 361.4 177.9C361.2 178.3 361 178.7 360.9 179.1C360.8 179.3 360.7 179.5 360.6 179.8C360.4 180.5 360.3 181.2 360.3 181.9L360.3 287.1L280.1 333.3L280.1 127.4C280.1 126.7 280 126 279.8 125.3C279.7 125.1 279.6 124.9 279.5 124.6C279.4 124.2 279.2 123.8 279 123.4C278.9 123.1 278.6 122.9 278.5 122.7C278.3 122.4 278 122.1 277.8 121.8C277.6 121.6 277.3 121.4 277 121.2C276.7 121 276.4 120.7 276.1 120.5L179.8 65.1C178.6 64.4 177.2 64 175.8 64C174.4 64 173 64.4 171.8 65.1L75.5 120.5C75.2 120.7 74.9 120.9 74.6 121.2C74.3 121.4 74.1 121.6 73.8 121.8C73.5 122.1 73.3 122.4 73.1 122.7C72.9 123 72.7 123.2 72.5 123.4C72.3 123.8 72.1 124.2 72 124.6C71.9 124.8 71.8 125 71.7 125.3C71.5 126 71.4 126.7 71.4 127.4L71.4 457.1C71.4 458.5 71.8 459.9 72.5 461.1C73.2 462.3 74.2 463.3 75.4 464L268 574.9C268.4 575.1 268.9 575.3 269.3 575.4C269.5 575.5 269.7 575.6 269.9 575.7C271.2 576.1 272.7 576.1 274 575.7C274.2 575.6 274.4 575.5 274.6 575.5C275.1 575.3 275.6 575.2 276 574.9L468.6 464.1C469.8 463.4 470.8 462.4 471.5 461.2C472.2 460 472.6 458.6 472.6 457.2L472.6 351.9L564.8 298.8C566 298.1 567 297.1 567.7 295.8C568.4 294.5 568.8 293.2 568.8 291.8L568.8 182C568.8 181.3 568.7 180.6 568.6 179.9zM175.8 81.3L256 127.4L175.8 173.6L95.6 127.4L175.8 81.2zM264 141.3L264 342.6C230.8 361.7 204.1 377.1 183.8 388.8L183.8 187.5C217 168.4 243.7 153 264 141.3zM264 554.1L87.5 452.5L87.5 141.3C107.8 153 134.6 168.4 167.7 187.5L167.7 402.7C167.7 403 167.8 403.3 167.8 403.6C167.8 404 167.9 404.4 168 404.8C168.1 405.1 168.2 405.4 168.4 405.7C168.5 406 168.7 406.4 168.8 406.7C169 407 169.2 407.2 169.4 407.5C169.6 407.8 169.8 408.1 170.1 408.3C170.3 408.5 170.6 408.7 170.9 408.9C171.2 409.1 171.5 409.4 171.8 409.6L264 461.8L264.1 554.2zM272 447.9L192 402.6C246.7 371.1 305.5 337.3 368.3 301.1L448.4 347.2C419 364 360.2 397.5 272 447.9zM456.5 452.5L280 554.1L280 461.8C381.4 404 440.2 370.4 456.5 361L456.5 452.4zM456.5 333.4C436.2 321.8 409.4 306.4 376.3 287.3L376.3 195.9C396.6 207.6 423.4 223 456.5 242.1L456.5 333.4zM464.5 228.1L384.3 181.9L464.5 135.7L544.7 181.8L464.5 228zM472.5 333.4L472.5 242.1C505.7 223 532.5 207.6 552.8 195.9L552.8 287.3L472.5 333.5z"/></svg>
+                        <p>Laravel</p>
+                    </div>
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg viewBox="-18.458 -22.75 191.151 191.151" xmlns="http://www.w3.org/2000/svg" fill="" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M-18.458 6.58h191.151v132.49H-18.458V6.58z" fill="none"></path><path d="M40.054 113.583h-5.175c-.183-8.735-.687-16.947-1.511-24.642h-.046l-7.879 24.642h-3.94l-7.832-24.642h-.045c-.581 7.388-.947 15.602-1.099 24.642H7.81c.304-10.993 1.068-21.299 2.289-30.919h6.414l7.465 22.719h.046l7.511-22.719h6.137c1.344 11.268 2.138 21.575 2.382 30.919M62.497 90.771c-2.107 11.434-4.887 19.742-8.337 24.928-2.688 3.992-5.633 5.99-8.84 5.99-.855 0-1.91-.258-3.16-.77v-2.757c.611.088 1.328.138 2.152.138 1.498 0 2.702-.412 3.62-1.238 1.098-1.006 1.647-2.137 1.647-3.388 0-.858-.428-2.612-1.282-5.268L42.618 90.77h5.084l4.076 13.19c.916 2.995 1.298 5.086 1.145 6.277 2.229-5.953 3.786-12.444 4.673-19.468h4.901v.002z" fill="#ffffff"></path><path d="M131.382 113.583h-14.7V82.664h4.945v27.113h9.755v3.806zM112.834 114.33l-5.684-2.805c.504-.414.986-.862 1.42-1.381 2.416-2.838 3.621-7.035 3.621-12.594 0-10.229-4.014-15.346-12.045-15.346-3.938 0-7.01 1.298-9.207 3.895-2.414 2.84-3.619 7.022-3.619 12.551 0 5.435 1.068 9.422 3.205 11.951 1.955 2.291 4.902 3.438 8.843 3.438 1.47 0 2.819-.18 4.048-.543l7.4 4.308 2.018-3.474zm-18.413-6.934c-1.252-2.014-1.878-5.248-1.878-9.707 0-7.785 2.365-11.682 7.1-11.682 2.475 0 4.289.932 5.449 2.792 1.25 2.017 1.879 5.222 1.879 9.619 0 7.849-2.367 11.774-7.099 11.774-2.476.001-4.29-.928-5.451-2.796M85.165 105.013c0 2.622-.962 4.773-2.884 6.458-1.924 1.678-4.504 2.519-7.737 2.519-3.024 0-5.956-.966-8.794-2.888l1.329-2.655c2.442 1.223 4.653 1.831 6.638 1.831 1.863 0 3.319-.413 4.375-1.232 1.055-.822 1.684-1.975 1.684-3.433 0-1.837-1.281-3.407-3.631-4.722-2.167-1.19-6.501-3.678-6.501-3.678-2.349-1.712-3.525-3.55-3.525-6.578 0-2.506.877-4.529 2.632-6.068 1.757-1.545 4.024-2.315 6.803-2.315 2.87 0 5.479.769 7.829 2.291l-1.192 2.656c-2.01-.854-3.994-1.281-5.951-1.281-1.585 0-2.809.381-3.66 1.146-.858.762-1.387 1.737-1.387 2.933 0 1.828 1.308 3.418 3.722 4.759 2.196 1.192 6.638 3.723 6.638 3.723 2.409 1.709 3.612 3.53 3.612 6.534" fill="#ffffff"></path><path d="M137.59 72.308c-2.99-.076-5.305.225-7.248 1.047-.561.224-1.453.224-1.531.933.303.3.338.784.601 1.198.448.747 1.229 1.752 1.942 2.276.783.6 1.569 1.194 2.393 1.717 1.453.899 3.1 1.422 4.516 2.318.825.521 1.645 1.195 2.471 1.756.406.299.666.784 1.193.971v-.114c-.264-.336-.339-.822-.598-1.196l-1.122-1.082c-1.084-1.456-2.431-2.727-3.884-3.771-1.196-.824-3.812-1.944-4.297-3.322l-.076-.076c.822-.077 1.797-.375 2.578-.604 1.271-.335 2.43-.259 3.734-.594.6-.15 1.195-.338 1.797-.523v-.337c-.676-.673-1.158-1.567-1.869-2.203-1.902-1.643-3.998-3.25-6.164-4.595-1.16-.749-2.652-1.231-3.887-1.868-.445-.225-1.195-.336-1.457-.71-.67-.822-1.047-1.904-1.533-2.877-1.08-2.053-2.129-4.331-3.061-6.502-.674-1.456-1.084-2.91-1.906-4.257-3.85-6.35-8.031-10.196-14.457-13.971-1.381-.786-3.024-1.121-4.779-1.533l-2.803-.148c-.598-.262-1.197-.973-1.719-1.309-2.132-1.344-7.621-4.257-9.189-.411-1.01 2.431 1.494 4.821 2.354 6.054.635.856 1.458 1.83 1.902 2.802.263.635.337 1.309.6 1.98.598 1.644 1.157 3.473 1.943 5.007.41.782.857 1.604 1.381 2.312.3.414.822.597.936 1.272-.521.744-.562 1.867-.861 2.801-1.344 4.221-.819 9.45 1.086 12.552.596.934 2.018 2.99 3.92 2.202 1.684-.672 1.311-2.801 1.795-4.668.111-.451.038-.747.262-1.043v.073c.521 1.045 1.047 2.052 1.53 3.1 1.159 1.829 3.177 3.735 4.858 5.002.895.676 1.604 1.832 2.725 2.245V74.1h-.074c-.227-.335-.559-.485-.857-.745-.674-.673-1.42-1.495-1.943-2.241-1.566-2.093-2.952-4.41-4.182-6.801-.602-1.16-1.121-2.428-1.606-3.586-.226-.447-.226-1.121-.601-1.346-.562.821-1.381 1.532-1.791 2.538-.711 1.609-.785 3.588-1.049 5.646l-.147.072c-1.19-.299-1.604-1.53-2.056-2.575-1.119-2.654-1.307-6.914-.336-9.976.26-.783 1.385-3.249.936-3.995-.225-.715-.973-1.122-1.383-1.685-.482-.708-1.01-1.604-1.346-2.39-.896-2.091-1.347-4.408-2.312-6.498-.451-.974-1.234-1.982-1.868-2.879-.712-1.008-1.495-1.718-2.058-2.913-.186-.411-.447-1.083-.148-1.53.073-.3.225-.412.523-.487.484-.409 1.867.111 2.352.336 1.385.56 2.543 1.083 3.699 1.867.523.375 1.084 1.085 1.755 1.272h.786c1.193.26 2.538.072 3.661.41 1.979.636 3.772 1.569 5.38 2.576 4.893 3.103 8.928 7.512 11.652 12.778.447.858.637 1.644 1.045 2.539.787 1.832 1.76 3.7 2.541 5.493.785 1.755 1.533 3.547 2.654 5.005.559.784 2.805 1.195 3.812 1.606.745.335 1.905.633 2.577 1.044 1.271.783 2.537 1.682 3.732 2.543.595.448 2.465 1.382 2.576 2.13M99.484 39.844a5.82 5.82 0 0 0-1.529.188v.075h.072c.301.597.824 1.011 1.197 1.532.301.599.562 1.193.857 1.791l.072-.074c.527-.373.789-.971.789-1.868-.227-.264-.262-.522-.451-.784-.22-.374-.705-.56-1.007-.86" fill="#ffffff"></path><path d="M141.148 113.578h.774v-3.788h-1.161l-.947 2.585-1.029-2.585h-1.118v3.788h.731v-2.882h.041l1.078 2.882h.557l1.074-2.882v2.882zm-6.235 0h.819v-3.146h1.072v-.643h-3.008v.643h1.115l.002 3.146z" fill="#ffffff"></path></g></svg>
+                        <p>MySQL</p>
+                    </div>
+                    <div class="w-40 h-40 text-base justify-center items-center self-center flex flex-col gap-0 border-2 border-(--white) rounded-full p-3">
+                        <svg fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M544 160C544 124.7 515.3 96 480 96L160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160zM361.8 471.7C361.8 469.9 361.8 465.7 361.9 460.1C362 448.7 362 431.3 362 416.4C362 400.8 356.8 390.9 350.7 385.7C387.7 381.6 426.7 376.5 426.7 312.6C426.7 294.4 420.2 285.3 409.6 273.6C411.3 269.3 417 251.6 407.9 228.6C394 224.3 362.2 246.5 362.2 246.5C335.6 239 305.6 239 279 246.5C279 246.5 247.2 224.3 233.3 228.6C224.2 251.5 229.8 269.2 231.6 273.6C221 285.3 216 294.4 216 312.6C216 376.2 253.3 381.6 290.3 385.7C285.5 390 281.2 397.4 279.7 408C270.2 412.3 245.9 419.7 231.4 394.1C222.3 378.3 205.9 377 205.9 377C189.7 376.8 204.8 387.2 204.8 387.2C215.6 392.2 223.2 411.4 223.2 411.4C232.9 441.1 279.3 431.1 279.3 431.1C279.3 440.1 279.4 452.8 279.4 461.7C279.4 466.5 279.5 470.3 279.5 471.7C279.5 476 276.5 481.2 268 479.7C202 457.6 155.8 394.8 155.8 321.4C155.8 229.6 226 159.9 317.8 159.9C409.6 159.9 484 229.6 484 321.4C484.1 394.8 439.3 457.7 373.3 479.7C364.9 481.2 361.8 476 361.8 471.7zM271.3 416.9C271.1 415.4 272.4 414.1 274.3 413.7C276.2 413.5 278 414.3 278.2 415.6C278.5 416.9 277.2 418.2 275.2 418.6C273.3 419 271.5 418.2 271.3 416.9zM262.2 420.1C260 420.3 258.5 419.2 258.5 417.7C258.5 416.4 260 415.3 262 415.3C263.9 415.1 265.7 416.2 265.7 417.7C265.7 419 264.2 420.1 262.2 420.1zM247.9 417.9C246 417.5 244.7 416 245.1 414.7C245.5 413.4 247.5 412.8 249.2 413.2C251.2 413.8 252.5 415.3 252 416.6C251.6 417.9 249.6 418.5 247.9 417.9zM235.4 410.6C233.9 409.3 233.5 407.4 234.5 406.5C235.4 405.4 237.3 405.6 238.8 407.1C240.1 408.4 240.6 410.4 239.7 411.2C238.8 412.3 236.9 412.1 235.4 410.6zM226.9 400.6C225.8 399.1 225.8 397.4 226.9 396.7C228 395.8 229.7 396.5 230.6 398C231.7 399.5 231.7 401.3 230.6 402.1C229.7 402.7 228 402.1 226.9 400.6zM220.6 391.8C219.5 390.5 219.3 389 220.2 388.3C221.1 387.4 222.6 387.9 223.7 388.9C224.8 390.2 225 391.7 224.1 392.4C223.2 393.3 221.7 392.8 220.6 391.8zM214.6 385.4C213.3 384.8 212.7 383.7 213.1 382.8C213.5 382.2 214.6 381.9 215.9 382.4C217.2 383.1 217.8 384.2 217.4 385C217 385.9 215.7 386.1 214.6 385.4z"/></svg>                        
+                        <p>Github</p>
+                    </div>  
+                </div>
+                
             </div>
 
         </section>
+
+        <section id="selfPortofolioPage" class="min-h-screen justify-center items-center w-full pt-10 pb-24" style="background-image: url('assets/bg-porto.png')">
+            <div class="flex w-full text-center items-center justify-end md:-translate-x-20 pt-5 mb-10 md:py-12">
+                <h1 class="text-(--background) rounded-full text-4xl bg-(--white) hover:bg-(--background) hover:text-(--white) hover:border-1 hover:border-(--white) justify-self-center py-5 mr-1 px-5 md:px-10 justify-center items-center font-extrabold transition-all duration-700 ease-in-out ">Self-Portofolio</h1>
+            </div>
+            <div class="container flex flex-col justify-center items-center gap-10 px-10 md:gap-20">
+                <div class="container flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0002.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0003.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0004.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0005.jpg">
+                    </div>
+                </div>
+                <div class="container flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0006.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0007.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0008.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0009.jpg">
+                    </div>
+                </div>
+                <div class="container flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0010.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0011.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0013.jpg">
+                    </div>
+                    <div class="w-80 h-auto justify-center items-center border-1 border-(--white) rounded-lg hover:scale-125 transition-all duration-700 ease-in-out">
+                        <img class="rounded-lg" src="assets/self-portofolio/Simple Portofolio_Alief Maulana Shiddiq_compressed_page-0014.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-contactPage" class="min-h-screen justify-center items-center w-full pt-10 pb-24 bg-linear-to-l from-(--background) to-(--secondary)">
+            <div class="flex -translate-x-15 text-left pt-5 mb-3 md:py-12">
+                <h1 class="rounded-full text-2xl bg-(--background) hover:bg-(--white) hover:text-(--background) hover:border-1 hover:border-(--background) justify-self-center py-5 pl-20 pr-8 justify-center items-center font-extrabold transition-all duration-700 ease-in-out ">About me & Contact</h1>
+            </div>
+            <div class="container flex flex-col md:flex-row w-full justify-center md:justify-between items-center gap-10 px-10 md:gap-20">
+                <div class="w-full md:w-1/2 md:min-h-100 px-4 py-8 bg-(--background)/50 px-3 mx-3 rounded-lg border-2 border-(--white)">
+                    <div>
+                        <img src="assets/alief.jpeg" class="pt-3 w-32 h-auto float-left mr-4 mb-2"></img>
+                        <p class="text-(--white) text-base font-extralight text-justify">
+                        <span class="font-bold text-(--primary) underline">Alief Maulana Shiddiq</span>, known as <span class="font-bold text-(--primary) underline">'Alief'</span> or nicknamed as <span class="font-bold text-(--primary) underline">'aes'</span> born in Cirebon 2002, now He is 23 years old. He is a <span class="font-bold text-(--primary) underline">Science graduate</span> from <span class="font-bold text-(--primary) underline">Universitas Indonesia</span> majoring in Physics and minor in Material Science. He has a strong passion for web development, material science, and people management. He has an enthusiast in Physics and Math and enjoys solving complex problems. He has interests and hobbies in Arts like drawing, painting, and music. He is also passionate about traveling and exploring nature.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:min-h-100 px-4 py-8 bg-(--background)/50 px-3 mx-3 rounded-lg border-2 border-(--white) justify-center items-center">
+                    <h1 class="text-2xl w-full mt-2 mb-5 font-bold justify-center items-center text-center">Contact</h1>
+                    <div class="flex gap-2 md:flex-col justify-center items-center w-full translate-x-3">
+                        <a href="https://linkedin.com/in/aliefshiddiq1" class="w-full flex flex-row gap-2 text-center items-center transition-all duration-500 ease-in-out" target="_blank">
+                            <div class="border-2 border-(--white) rounded-full w-10 md:w-12 p-3 md:mx-10">
+                                <svg class="w-full" fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg>
+                            </div>
+                            <p class="hidden w-0 md:w-full md:flex text-sm">LinkedIn: Alief Maulana Shiddiq</p>
+                        </a>
+                        <a href="https://github.com/itsme-as" class="w-full flex flex-row gap-2 items-center transition-all duration-500 ease-in-out" target="_blank">
+                            <div class="border-2 border-(--white) rounded-full w-10 md:w-12 p-3 md:mx-10">
+                                <svg class="w-full" fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                            </div>
+                            <p class="hidden w-0 md:w-full md:flex text-sm">Github: itsme-as</p>
+                        </a>
+                        <a href="https://gmail.com" class="w-full flex flex-row gap-2 items-center transition-all duration-500 ease-in-out" target="_blank">
+                            <div class="border-2 border-(--white) rounded-full w-10 md:w-12 p-3 md:mx-10">
+                                <svg class="w-full" fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"/></svg>
+                            </div>
+                            <p class="hidden w-0 md:w-full md:flex text-sm">Mail: aliefshiddiq0@gmail.com</p>
+                        </a>
+                        <a href="https://wa.me/+6287763918048" class="w-full flex flex-row gap-2 items-center transition-all duration-500 ease-in-out" target="_blank">
+                            <div class="border-2 border-(--white) rounded-full w-10 md:w-12 p-3 md:mx-10">
+                                <svg class="w-full" fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 480c141.4 0 256-107.5 256-240S397.4 0 256 0 0 107.5 0 240c0 54.3 19.2 104.3 51.6 144.5L2.8 476.8c-4.8 9-3.3 20 3.6 27.5s17.8 9.8 27.1 5.8l118.4-50.7C183.7 472.6 218.9 480 256 480zM128 208a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm128 0a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm96 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                            </div>
+                            <p class="hidden w-0 md:w-full md:flex text-sm">Chat/Call: 0877-6391-8048</p>
+                        </a>
+                        <a href="https://instagram.com/alief__shiddiq" class="w-full flex flex-row gap-2 items-center transition-all duration-500 ease-in-out" target="_blank">
+                            <div class="border-2 border-(--white) rounded-full w-10 md:w-12 p-3 md:mx-10">
+                                <svg class="w-full" fill="#FFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                            </div>
+                            <p class="hidden w-0 md:w-full md:flex text-sm">Instagram: @alief__shiddiq</p>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="min-h-screen bg-linear-to-r from-(--primary) to-(--white)">
-
-
+    <footer class="h-4 bg-(--white) justify-center items-center w-full">
+        <p class="text-(--background) text-center text-sm py-2">© 2025 Alief Maulana Shiddiq.</p>
     </footer>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
